@@ -21,3 +21,16 @@
     }
 
 //Recursion
+    public static int getNode(SinglyLinkedListNode llist, int positionFromTail) {
+    // Write your code here
+        int result = 0;
+        SinglyLinkedListNode tmp = llist;
+        int length = 0;
+        while (tmp != null) {
+            tmp = tmp.next;
+            length++;
+        }
+        if (length - positionFromTail - 1 > 0) result = getNode(llist.next, positionFromTail);
+        if (length - positionFromTail - 1 == 0) result = llist.data;
+        return result;
+    }
