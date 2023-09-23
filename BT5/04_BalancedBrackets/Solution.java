@@ -9,7 +9,7 @@ import java.util.regex.*;
 class Result {
 
     /*
-     * Cach 1:
+     * Cách 1: Ta sẽ xử lý chuỗi, cứ bắt gặp cặp ngoặc nào hợp lệ thì ta loại nó ra khỏi string, nếu string cuối cùng vẫn còn ngoặc chứng tỏ string đó có cặp ngoặc không hợp lệ
      */
 
     public static String isBalanced(String s) {
@@ -26,8 +26,8 @@ class Result {
     // Write your code here
 
     }
-    /*Cach 2:
-     */((((({{{}}})))))
+    /*Cach 2: Ta dùng stack để xử lí: ta sẽ bỏ hết những ngoặc mở vào stack, khi gặp ngoặc đóng thì t kiểm tra xem stack trên cùng có ngoặc mở tương ứng không, nếu có thì ta đẩy ngoặc mở đó ra khỏi stack, không thì return false (tức là noặc không hợp lệ) luôn. Sau khi duyệt hết chuỗi ngoặc, nếu stack rỗng thì chứng tỏ string là hợp lệ, ngược lại thì không.
+     */
         public static String isBalanced(String s) {
         Stack<Character> stack = new Stack<>();
         int i;
