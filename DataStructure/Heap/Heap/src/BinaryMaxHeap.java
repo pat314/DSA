@@ -32,8 +32,8 @@ public class BinaryMaxHeap {
     //delete
     public void sink(int k) {
         while (2 * k <= N) {
-            int j = k;
-            if (2*j < N && maxPQ[j] < maxPQ[j+1]) j++;
+            int j = 2 * k;
+            if (j < N && maxPQ[j] < maxPQ[j+1]) j++;
             if (maxPQ[k] > maxPQ[j]) break;
             exchange(maxPQ, k, j);
             k = j;
