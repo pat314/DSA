@@ -1,0 +1,72 @@
+import java.util.*;
+import java.io.*;
+
+class Node {
+    Node left;
+    Node right;
+    int data;
+    
+    Node(int data) {
+        this.data = data;
+        left = null;
+        right = null;
+    }
+}
+
+class Solution {
+
+/* you only have to complete the function given below.  
+Node is defined as  
+
+class Node {
+    int data;
+    Node left;
+    Node right;
+}
+
+*/
+
+    public static void inOrder(Node root) {
+        Queue<Node> queue = new LinkedList<>();
+        
+        inOrder(root, queue);
+        while (!queue.isEmpty()) {
+            System.out.print(queue.remove().data + " ");
+        }
+    }
+    
+    private static void inOrder(Node x, Queue<Node> queue) {
+        if (x == null) return;
+        inOrder(x.left, queue);
+        queue.add(x);
+        inOrder(x.right, queue);
+    }
+
+	public static Node insert(Node root, int data) {
+        if(root == null) {
+            return new Node(data);
+        } else {
+            Node cur;
+            if(data <= root.data) {
+                cur = insert(root.left, data);
+                root.left = cur;
+            } else {
+                cur = insert(root.right, data);
+                root.right = cur;
+            }
+            return root;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int t = scan.nextInt();
+        Node root = null;
+        while(t-- > 0) {
+            int data = scan.nextInt();
+            root = insert(root, data);
+        }
+        scan.close();
+        inOrder(root);
+    }	
+}
