@@ -71,11 +71,12 @@ public class Solution {
          * 
          * TH2.1: Nếu số vừa nhập vào nhỏ hơn mid, tức là số đó được thêm vào nửa trái, 
          * thành ra mid lúc này sẽ là số đầu tiên bên phải 
-         * (*+** m***, với + là số vừa được thêm vào, m là mid)
+         * (*+*[* m*]**, với + là số vừa được thêm vào, m là mid)
          * => Phải dịch mid về số bên cạnh trái (dùng lower của treeset)
          * 
          * TH2.2: Nếu số vừa nhập vào lớn hơn mid, tức là số đó được thêm vào nửa phải,
-         * thành ra mid lúc này sẽ là số cuối cùng của nửa trái (***m *+**, với + là số vừa được thêm vào, m là mid)
+         * thành ra mid lúc này sẽ là số cuối cùng của nửa trái 
+         * (***[m *]+**, với + là số vừa được thêm vào, m là mid)
          * => mid đã đúng vị trí, không cần phải dịch
          * 
          */
@@ -102,7 +103,7 @@ public class Solution {
          * Case 1.2: If that number is smaller than mid
          * Because that number is smaller than mid, when added, that number will be in the left half of the range,
          * So the left half has 1 more element than the old right half
-         * (*+**m **** => **+** m ****, where + is the number just added, m is mid)
+         * (*+**m **** => *+** m ****, where + is the number just added, m is mid)
          * => mid is in the correct position, no need to shift
          *
          *
@@ -111,11 +112,12 @@ public class Solution {
          *
          * Case 2.1: If the number just entered is smaller than mid, that means that number is added to the left half,
          * So mid will now be the first number on the right
-         * (*+** m***, where + is the number just added, m is mid)
+         * (*+*[* m]***, where + is the number just added, m is mid)
          * => Must shift mid to the number next to the left (use lower of tree set)
          *
          * Case 2.2: If the number just entered is greater than mid, that means that number is added to the right half,
-         * so mid will now be the last number of the left half (***m **+**, where + is the newly added number, m is mid)
+         * so mid will now be the last number of the left half 
+         * (***[m *]+**, where + is the newly added number, m is mid)
          * => mid is in the correct position, no need to shift
          */
 
