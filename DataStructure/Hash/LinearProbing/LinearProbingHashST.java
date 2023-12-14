@@ -18,8 +18,8 @@ public class LinearProbingHashST {
     public LinearProbingHashST(int capacity) {
         m = capacity;
         n = 0;
-        strings = (String[])   new Object[m];
-        vals = (Integer[]) new Object[m];
+        strings = new String[m];
+        vals = new Integer[m];
     }
 
     public int size() {return n;}
